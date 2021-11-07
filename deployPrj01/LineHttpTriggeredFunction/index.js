@@ -61,6 +61,14 @@ async function handleEvent(event) {
         altText: 'item list',
         contents: flexMsg
       });
+    if (event.message.text === 'ハッカソンへようこそ') {
+      //https://developers.line.biz/ja/reference/messaging-api/#flex-message
+      return client.replyMessage(event.replyToken,{
+        type: 'audio',
+        originalContentUrl: "https://webapi.aitalk.jp/webapi/v5/ttsget.php？username=hackathon&password=b4BGAm8p&text=%E3%83%8F%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3%E3%81%B8%E3%81%94%E5%8F%82%E5%8A%A0%E3%81%AE%E7%9A%86%E3%81%95%E3%82%93%E3%80%81%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF%E3%80%82%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E3%82%A8%E3%83%BC%E3%82%A2%E3%82%A4%E3%81%A7%E3%81%99%E3%80%82&input_type=text&speaker_name=nozomi_emo&volume=1.00&speed=1.00&pitch=1.00&range=1.00&style=%7B%22j%22%3A%220.0%22%2C%22s%22%3A%220.0%22%2C%22a%22%3A%220.0%22%7D&ext=ogg&use_wdic=1",
+        duration: 10000
+        });
+    }
     } else if (event.message.text === 'quick') {
       //https://developers.line.biz/ja/reference/messaging-api/#quick-reply
       return client.replyMessage(event.replyToken,{
