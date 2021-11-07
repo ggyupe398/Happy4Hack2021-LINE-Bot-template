@@ -54,13 +54,6 @@ async function handleEvent(event) {
     }
   
   } else if (event.message.type === 'text') {
-    if (event.message.text === 'flex') {
-      //https://developers.line.biz/ja/reference/messaging-api/#flex-message
-      return client.replyMessage(event.replyToken,{
-        type: 'flex',
-        altText: 'item list',
-        contents: flexMsg
-      });
     if (event.message.text === 'ハッカソンへようこそ') {
       //https://developers.line.biz/ja/reference/messaging-api/#flex-message
       return client.replyMessage(event.replyToken,{
